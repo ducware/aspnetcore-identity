@@ -1,2 +1,2 @@
 # aspnetcore-identity
- JWT, Authentication, Authorization, Role-based, Send mail active token, 2FA, Reset password, OTP
+ ### docs: https://learn.microsoft.com/en-us/aspnet/core/security/authentication/identity?view=aspnetcore-6.0&tabs=visual-studio
