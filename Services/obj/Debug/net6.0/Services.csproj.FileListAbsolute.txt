@@ -1,0 +1,13 @@
+E:\Git\aspnetcore-identity\Services\obj\Debug\net6.0\Services.csproj.AssemblyReference.cache
+E:\Git\aspnetcore-identity\Services\obj\Debug\net6.0\Services.GeneratedMSBuildEditorConfig.editorconfig
+E:\Git\aspnetcore-identity\Services\obj\Debug\net6.0\Services.AssemblyInfoInputs.cache
+E:\Git\aspnetcore-identity\Services\obj\Debug\net6.0\Services.AssemblyInfo.cs
+E:\Git\aspnetcore-identity\Services\obj\Debug\net6.0\Services.csproj.CoreCompileInputs.cache
+E:\Git\aspnetcore-identity\Services\obj\Debug\net6.0\Services.sourcelink.json
+E:\Git\aspnetcore-identity\Services\bin\Debug\net6.0\Services.deps.json
+E:\Git\aspnetcore-identity\Services\bin\Debug\net6.0\Services.dll
+E:\Git\aspnetcore-identity\Services\bin\Debug\net6.0\Services.pdb
+E:\Git\aspnetcore-identity\Services\obj\Debug\net6.0\Services.dll
+E:\Git\aspnetcore-identity\Services\obj\Debug\net6.0\refint\Services.dll
+E:\Git\aspnetcore-identity\Services\obj\Debug\net6.0\Services.pdb
+E:\Git\aspnetcore-identity\Services\obj\Debug\net6.0\ref\Services.dll
