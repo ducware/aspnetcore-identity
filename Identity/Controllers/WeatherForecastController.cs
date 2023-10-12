@@ -1,3 +1,5 @@
+using Identity.Constant;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Identity.Controllers
@@ -18,6 +20,7 @@ namespace Identity.Controllers
             _logger = logger;
         }
 
+        [Authorize(Roles = RoleConst.Admin)]
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
