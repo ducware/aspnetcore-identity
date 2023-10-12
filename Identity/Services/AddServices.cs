@@ -52,6 +52,11 @@ namespace Identity.Services
                 options.SignIn.RequireConfirmedEmail = true;
             });
 
+            services.Configure<DataProtectionTokenProviderOptions>(options =>
+            {
+                options.TokenLifespan = TimeSpan.FromHours(10);
+            });
+
             services.AddSingleton(emailConfig);
 
             return services;

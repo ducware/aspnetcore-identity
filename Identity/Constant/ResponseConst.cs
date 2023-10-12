@@ -20,6 +20,18 @@
     {
         public const string EmailVerify = "Email verify successfully!";
         public const string UserDoesnotExist = "This user doesnot exist!";
+        public const string CouldnotSendLink = "Couldnot send link to email, please try again!";
+    }
 
+    public class LoginConst
+    {
+        public const string InvalidCode = "Invalid code!";
+        public const string UserDoesnotExist = "This user doesnot exist!";
+    }
+
+    public class ForgotPassConst
+    {
+        public const string PasswordChanged = "Password has been changed 👌";
+        public const string PasswordResetFailed = "Password reset failure";
     }
 }
