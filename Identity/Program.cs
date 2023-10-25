@@ -1,5 +1,5 @@
+using Identity.Middlewares;
 using Identity.Services;
-using Services.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +21,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ValidateJwtTokenMiddleware>();
 
 app.UseHttpsRedirection();
 
