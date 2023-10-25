@@ -2,6 +2,8 @@ using Identity.Constant;
 using Identity.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.IdentityModel.Tokens.Jwt;
+using System.Net;
 
 namespace Identity.Controllers
 {
@@ -46,13 +48,32 @@ namespace Identity.Controllers
 
         [Authorize(Roles = RoleConst.Admin)]
         [HttpGet("role-admin")]
-        public async Task<IActionResult> RoleAdmin()
+        public async Task<IActionResult> RoleAdmin([FromHeader] string Authorization)
         {
-            return StatusCode(StatusCodes.Status200OK, new Response
+            string authToken = Authorization.Substring("Bearer ".Length).Trim();
+            var handler = new JwtSecurityTokenHandler();
+            JwtSecurityToken tokenS;
+            try
             {
-                Status = ResponseConst.Success,
-                Message = "ROLE ADMIN AUTHORIZE"
-            });
+                tokenS = handler.ReadToken(authToken) as JwtSecurityToken;
+                if (tokenS.ValidTo > DateTime.UtcNow)
+                {
+                    return StatusCode(StatusCodes.Status200OK, new Response
+                    {
+                        Status = ResponseConst.Success,
+                        Message = "ROLE ADMIN AUTHORIZE"
+                    });
+                }
+                else
+                {
+                    return Unauthorized(); // Token expired - return an Unauthorised status
+                }
+            }
+            catch
+            {
+                // Token validation failed
+                return Unauthorized();
+            }
         }
 
         [Authorize(Roles = RoleConst.Customer)]
