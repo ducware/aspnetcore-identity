@@ -103,14 +103,12 @@ namespace Identity.Controllers
         [HttpGet("current-user-id")]
         public async Task<IActionResult> CurrentUserId()
         {
-            var currentUserId = User.FindFirstValue("CurrentUserId");
+            var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             return StatusCode(StatusCodes.Status200OK, new Response
             {
                 Status = ResponseConst.Success,
                 Message = currentUserId
             });
         }
-
-
     }
 }
