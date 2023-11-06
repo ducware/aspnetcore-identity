@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net;
+using System.Security.Claims;
 
 namespace Identity.Controllers
 {
@@ -95,6 +96,18 @@ namespace Identity.Controllers
             {
                 Status = ResponseConst.Success,
                 Message = "ROLE USER AUTHORIZE"
+            });
+        }
+
+        [Authorize]
+        [HttpGet("current-user-id")]
+        public async Task<IActionResult> CurrentUserId()
+        {
+            var currentUserId = User.FindFirstValue("CurrentUserId");
+            return StatusCode(StatusCodes.Status200OK, new Response
+            {
+                Status = ResponseConst.Success,
+                Message = currentUserId
             });
         }
 
